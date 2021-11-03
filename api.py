@@ -8,8 +8,9 @@ SECRET = 'UiN5mNznGf4pFwP6i1rEoyzNKUwkHMZAPSH7uUIzblbsxLQcIO1Bs5Bt2Df1s56U'
 client = Client(key=KEY, secret=SECRET, base_url=TEST)
 print(client.time())
 
-# Get account information
-print(client.account())
+info = client.exchange_info()
+acc = client.account()
+print(acc)
 
 # Post a new order
 params = {
@@ -17,9 +18,9 @@ params = {
     'side': 'SELL',
     'type': 'LIMIT',
     'timeInForce': 'GTC',
-    'quantity': 0.002,
-    'price': 9500
+    'quantity': 1,
+    'price': 1
 }
 
-response = client.new_order(**params)
-print(response)
+#response = client.new_order_test(**params)
+#print(response)
